@@ -1,0 +1,35 @@
+# EasyAdmin 应用配置文件
+# 此文件包含应用程序的所有核心配置信息
+
+# 应用程序基本信息配置
+app:
+  name: EasyAdmin              # 应用程序名称
+  version: 1.0.0               # 应用程序版本号
+  debug: true                  # 调试模式开关，生产环境建议设为 false
+
+# 数据库连接配置
+database:
+  mysql:
+    host: localhost            # MySQL 服务器地址
+    port: 3306                 # MySQL 服务器端口号
+    username: root             # 数据库用户名
+    password: your_password    # 数据库密码（请修改为实际密码）
+    database: easyadmin        # 数据库名称
+    charset: utf8mb4           # 字符集，支持完整的 UTF-8 编码
+    pool_size: 10              # 连接池基本大小
+    max_overflow: 20           # 连接池最大溢出连接数
+    pool_timeout: 30           # 获取连接的超时时间（秒）
+    pool_recycle: 3600         # 连接回收时间（秒），防止连接超时
+    echo: false                # 是否打印 SQL 语句，调试时可设为 true
+
+# Web 服务器配置
+server:
+  host: 0.0.0.0              # 服务器监听地址，0.0.0.0 表示监听所有网卡
+  port: 8000                 # 服务器监听端口号
+  reload: true               # 开发模式下自动重载，生产环境建议设为 false
+
+# 日志系统配置
+logging:
+  level: INFO                # 日志级别：DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"  # 日志格式
+  file: logs/app.log         # 日志文件路径
